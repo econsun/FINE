@@ -1,0 +1,175 @@
+\immediate\write18{makeindex \jobname.idx}
+
+\documentclass[a4paper]{book}
+
+% 设置页边距
+\usepackage{geometry}
+\geometry{left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+% 设置中文字体
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei, ItalicFont=AR PL KaitiM GB]
+
+% 设置英文
+\usepackage[T1]{fontenc}
+
+% 设置缩进
+\usepackage{indentfirst}
+\setlength\parindent{2em}
+
+% 设置行间距
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{parskip}
+\setlength{\parskip}{1em}
+\lineskiplimit=5pt
+\lineskip=5pt
+
+% 索引宏包
+\usepackage{makeidx}
+
+% 页眉页脚宏包
+\usepackage[clearempty]{titlesec}
+\usepackage{titletoc,titleps}
+\usepackage{ifthen}
+
+% 图表宏包
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{bicaption}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{paracol}
+\usepackage{balance}
+
+% 数学宏包
+\usepackage{amsmath,bm}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{oplotsymbl}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{upgreek}
+\usepackage{ntheorem}
+\usepackage{empheq}
+
+% 设置 enumerate 环境
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\raggedbottom
+
+\begin{document}
+
+% 设置图、表、公式编号格式
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
+
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
+
+% 设置图表名中文样式
+\renewcommand{\bibname}{参考文献}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
+
+% 设置前言格式
+\newpagestyle{mypre}{
+\sethead[\chaptertitle][][]
+{}{}{\chaptertitle}
+\setfoot[][\thepage][]{}{\thepage}{}
+}
+
+%设置正文的页眉页脚，\chaptername~~\chaptertitle
+\newpagestyle{main}{
+\sethead[\thesection~\sectiontitle][][texlive 2022]
+{texlive 2022}{}{\thesection~\sectiontitle}
+\headrule
+\setfoot[][\thepage][]{}{\thepage}{}
+}
+
+\newpagestyle{back}{
+\sethead[\chaptertitle][][texlive 2022]
+{texlive 2022}{}{\chaptertitle}
+\headrule
+\setfoot[][\thepage][]{}{\thepage}{}
+}
+
+% 开始前言
+\frontmatter
+
+\title{Fantastic Intermediate Note on Economics}
+\author{Paul Sun}
+\date{\today}	%zhnumber的中文日期
+\maketitle
+
+% 设置前页章节格式
+\titleformat{\chapter}[hang]{\Huge\bfseries\filcenter}{\chaptername}{1em}{}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+
+% 导入前页
+\thispagestyle{empty}
+\input{0-Preface}
+
+% 设置前页页码
+\pagenumbering{Roman}
+\setcounter{page}{0}
+
+% 加载前页格式
+\pagestyle{mypre}
+
+\renewcommand{\contentsname}{目录\label{here}}	
+\tableofcontents
+\titlecontents{chapter}[0em]{}{\bf}{}{\titlerule*[0.5pc]{.}\contentspage[\pageref{here}]}
+\addcontentsline{toc}{chapter}{目录}
+
+\titlecontents{chapter}[1.5em]{}{\color{blue}\bf\contentslabel{1.5em}}{}{\titlerule*[0.5pc]{.}\contentspage[\pageref{here}]}
+
+% 开始正文
+\mainmatter
+
+% 加载正文格式
+\pagestyle{main}
+
+\input{11-EquilibriumTheory}
+\input{12-ConsumerTheory}
+\input{13-ProducerTheory}
+\input{14-MarketTheory}
+\input{15-WelfareTheory}
+\input{16-FactorTheory}
+\input{17-GameTheory}
+\input{18-MarketFailure}
+\input{21-EconomicData}
+\input{22-LongTermEconomics}
+\input{23-UltraLongTermEconomics}
+\input{24-ShortEconomics}
+\input{25-OpenEconomics}
+\input{26-MacroPolicy}
+\input{27-MicroFoundation}
+\input{28-SchoolnEvent}
+
+% 开始附录
+\backmatter
+
+\titlecontents{chapter}[0em]{\bf}{}{}{\titlerule*[]{}\contentspage}
+
+
+\balance
+\printindex
+\addcontentsline{toc}{chapter}{索引}
+
+\clearpage
+\end{document}
