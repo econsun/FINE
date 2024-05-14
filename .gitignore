@@ -6,3 +6,5 @@
 *.thm
 *.toc
 *.synctex
+*.ilg
+*.ind
