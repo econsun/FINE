@@ -1,10 +1,10 @@
 *.aux
 *.idx
+*.ilg
+*.ind
 *.log
 *.out
 *.gz
 *.thm
 *.toc
 *.synctex
-*.ilg
-*.ind
