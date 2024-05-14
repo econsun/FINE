@@ -30,9 +30,9 @@
 
 % 设置 enumerate
 \usepackage{enumitem}
-\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setenumerate[1]{label=\textendash,itemsep=2pt,parsep=0\parskip,topsep=0pt}
+\setitemize[1]{itemsep=2pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=2pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 
 
 
@@ -51,6 +51,7 @@
 \usepackage{paracol}
 \usepackage{balance}
 \usepackage[most]{tcolorbox}
+
 \definecolor{browna}{rgb}{0.76,0.72,0.65}
 \newtcbtheorem[no counter]{definition}{定义}{
     enhanced,
@@ -66,6 +67,24 @@
         size=small,
         colback=browna,
         colframe=browna,
+    } 
+}{thm}
+
+\definecolor{brownb}{rgb}{0.76,0.72,0.65}
+\newtcbtheorem[no counter]{experience}{经验}{
+    enhanced,
+    sharp corners,
+    attach boxed title to top left={
+        yshifttext=-1mm
+    },
+    colback=white,
+    colframe=brownb,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        size=small,
+        colback=brownb,
+        colframe=brownb,
     } 
 }{thm}
 
@@ -170,7 +189,7 @@
 % 定义前页部分章起始格式
 \titleformat{\chapter}[hang]{\Huge\bfseries\filcenter}{\chaptername}{1em}{}
 \titleformat*{\section}{\huge\bfseries\filleft}
-\titleformat*{\subsection}{\Large\bfseries\filleft}
+\titleformat*{\subsection}{\Large\bfseries}
 
 % 修改前言和目录的页面样式
 \thispagestyle{empty}
