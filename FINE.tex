@@ -30,11 +30,9 @@
 
 % 设置 enumerate
 \usepackage{enumitem}
-\setenumerate[1]{label=\textendash,itemsep=2pt,parsep=0\parskip,topsep=0pt}
-\setitemize[1]{itemsep=2pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setdescription{itemsep=2pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-
-
+\setenumerate[1]{label=\textendash,itemsep=5pt,parsep=0\parskip,topsep=0pt}
+\setitemize[1]{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 
 % 图表宏包
 \usepackage{graphicx}
@@ -70,8 +68,8 @@
     } 
 }{thm}
 
-\definecolor{brownb}{rgb}{0.76,0.72,0.65}
-\newtcbtheorem[no counter]{experience}{经验}{
+\definecolor{brownb}{rgb}{0.39,0.77,0.82}
+\newtcbtheorem[no counter]{ramble}{漫谈}{
     enhanced,
     sharp corners,
     attach boxed title to top left={
@@ -181,9 +179,10 @@
 % 开始前言
 \frontmatter
 
-\title{A Fantastic Intermediate Note on Economics\\(FINE, Wish Your Life Be Fine)}
-\author{Paul Sun}
-\date{\zhtoday}
+\newcommand{\tm}{\fontspec{Times New Roman}}
+\title{\huge\tm A Fantastic Intermediate Note on Economics\\\huge{(\,FINE, Wish Your Life Be Fine\,)}}
+\author{\LARGE{\tm Paul Sun}}
+\date{\LARGE\tm \today}
 \maketitle
 
 % 定义前页部分章起始格式
