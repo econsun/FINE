@@ -14,25 +14,19 @@
 \usepackage[T1]{fontenc}
 \usepackage{anyfontsize}
 
-% 基本设置
+% 设置缩进、间距
 \usepackage{indentfirst}
 \setlength\parindent{2em}
 \usepackage{setspace}
 \lineskiplimit=5pt
 \lineskip=5pt
 
-% 排版宏包
+% 章节宏包
 \usepackage[clearempty]{titlesec}
 \usepackage{titletoc,titleps}
 \usepackage{ifthen}
 \usepackage{makeidx}
 \makeindex
-
-% 设置 enumerate
-\usepackage{enumitem}
-\setenumerate[1]{label=\textendash,itemsep=5pt,parsep=0\parskip,topsep=0pt}
-\setitemize[1]{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setdescription{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 
 % 图表宏包
 \usepackage{graphicx}
@@ -49,105 +43,7 @@
 \usepackage{paracol}
 \usepackage{balance}
 \usepackage{wrapfig}
-
 \graphicspath{{./Graph/}}
-
-% 设置盒子
-\usepackage[most]{tcolorbox}
-\tcbuselibrary{skins, breakable, theorems}
-
-\definecolor{browna}{rgb}{0.76,0.72,0.65}
-\newtcbtheorem[no counter]{definition}{定义}{
-    enhanced,
-    sharp corners,
-    attach boxed title to top left={
-        yshifttext=-1mm
-    },
-    colback=white,
-    colframe=browna,
-    fonttitle=\bfseries,
-    boxed title style={
-        sharp corners,
-        size=small,
-        colback=browna,
-        colframe=browna,
-    } 
-}{thm}
-
-\definecolor{brownb}{rgb}{0.39,0.77,0.82}
-\newtcbtheorem[no counter]{ramble}{漫谈}{
-    enhanced,
-    sharp corners,
-    attach boxed title to top left={
-        yshifttext=-1mm
-    },
-    colback=white,
-    colframe=brownb,
-    fonttitle=\bfseries,
-    boxed title style={
-        sharp corners,
-        size=small,
-        colback=brownb,
-        colframe=brownb,
-    } 
-}{thm}
-
-\definecolor{brownc}{rgb}{1.00,0.67,0.22}
-
-\newcounter{graph}[chapter]
-\renewcommand{\thegraph}{\arabic{chapter}-\arabic{graph}}
-\newtcbtheorem[use counter=graph, number within = chapter]{graph}{图}{
-    enhanced,
-    sharp corners,
-    attach boxed title to top left={
-        yshifttext=-1mm
-    },
-    colback=white,
-    colframe=brownc,
-    fonttitle=\bfseries,
-    boxed title style={
-        sharp corners,
-        size=small,
-        colback=brownc,
-        colframe=brownc,
-    } 
-}{thm}
-
-\definecolor{browna}{rgb}{0.76,0.72,0.65}
-\newtcbtheorem[no counter]{derive}{数学推导}{
-    enhanced,
-    sharp corners,
-    attach boxed title to top left={
-        yshifttext=-1mm
-    },
-    colback=white,
-    colframe=browna,
-    fonttitle=\bfseries,
-    boxed title style={
-        sharp corners,
-        size=small,
-        colback=browna,
-        colframe=browna,
-    } 
-}{thm}
-
-\definecolor{browna}{rgb}{0.76,0.72,0.65}
-\newtcbtheorem[no counter]{faq}{问题}{
-    enhanced,
-    sharp corners,
-    attach boxed title to top left={
-        yshifttext=-1mm
-    },
-    colback=white,
-    colframe=browna,
-    fonttitle=\bfseries,
-    boxed title style={
-        sharp corners,
-        size=small,
-        colback=browna,
-        colframe=browna,
-    } 
-}{thm}
 
 % 数学宏包
 \usepackage{amsmath,bm}
@@ -196,6 +92,31 @@
 % 设置顶部对齐
 \raggedbottom
 
+% 设置 enumerate
+\usepackage{enumitem}
+\setenumerate[1]{label=\textendash,itemsep=5pt,parsep=0\parskip,topsep=0pt}
+\setitemize[1]{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+% 设置盒子
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+\definecolor{dingyi}{RGB}{194,184,158}
+\definecolor{wenda}{RGB}{248,234,218}
+\definecolor{mantan}{RGB}{146,149,148}
+\definecolor{shuxue}{RGB}{192,204,218}
+\definecolor{tuxiang}{RGB}{182,196,180}
+\newcounter{graph}[chapter]
+\renewcommand{\thegraph}{\arabic{chapter}-\arabic{graph}\,}
+\newtcbtheorem[no counter]{dingyi}{定义}{enhanced, sharp corners,attach boxed title to top left={yshifttext=-1mm}, colback=white, colframe=dingyi, fonttitle=\bfseries, boxed title style={sharp corners, size=small, colback=dingyi, colframe=dingyi,}}{thm}
+\newtcbtheorem[no counter]{wenda}{问答}{enhanced, sharp corners,attach boxed title to top left={yshifttext=-1mm}, colback=white, colframe=wenda, fonttitle=\bfseries, boxed title style={sharp corners, size=small, colback=wenda, colframe=wenda,}}{thm}
+\newtcbtheorem[no counter]{mantan}{漫谈}{enhanced, sharp corners,attach boxed title to top left={yshifttext=-1mm}, colback=white, colframe=mantan, fonttitle=\bfseries, boxed title style={sharp corners, size=small, colback=mantan, colframe=mantan,}}{thm}
+\newtcbtheorem[no counter]{shuxue}{数学推导}{enhanced, sharp corners,attach boxed title to top left={yshifttext=-1mm}, colback=white, colframe=shuxue, fonttitle=\bfseries, boxed title style={sharp corners, size=small, colback=shuxue, colframe=shuxue,}}{thm}
+\newtcbtheorem[use counter=graph, number within = chapter]{tuxiang}{图像}{enhanced, sharp corners,attach boxed title to top left={yshifttext=-1mm}, colback=white, colframe=tuxiang, fonttitle=\bfseries, boxed title style={sharp corners, size=small, colback=tuxiang, colframe=tuxiang,}}{thm}
+
+% 定义命令
+\newcommand{\zhu}{\noindent\textbf{注}\quad\quad}
+
 % 开始文档
 \begin{document}
 \begin{spacing}{1.2}
@@ -234,8 +155,6 @@
 \headrule
 \setfoot[][\thepage][]{}{\thepage}{}
 }
-
-\newcommand{\zhu}{\noindent\textbf{注}\quad\quad}
 
 % 压缩空白页
 \setboolean{@twoside}{false}
