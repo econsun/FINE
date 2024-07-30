@@ -1,0 +1,11 @@
+/._wordcount_selection.tex
+*.aux
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.gz
+*.thm
+*.toc
+*.synctex

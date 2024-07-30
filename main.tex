@@ -1,0 +1,63 @@
+\documentclass[A4,12pt,twoside]{book}
+\usepackage{amd}
+
+% %-------------------------------------------------
+% %         General Setting
+% %-------------------------------------------------
+
+\graphicspath{{Graph/}{../Graph/}}
+\setlength{\cftbeforechapskip}{3pt}
+\setlength{\parindent}{2em}
+
+\input{Attach/4-Theorems.tex}
+\usepackage[english]{babel} %Language
+
+\usepackage{ctex}
+\usepackage{fontspec}
+% \setCJKmainfont{Source Han Serif CN}
+
+
+\setlist[itemize]{itemsep=5pt}
+\setlist[enumerate]{itemsep=5pt}
+
+% %-------------------------------------------------
+% %         General Informations
+% %-------------------------------------------------
+
+\newcommand{\BigTitle}{
+    Fantastic Intermediate Notes on Economics
+    }
+
+\newcommand{\LittleTitle}{
+    Wish Your Life Be FINE
+    }
+
+    
+\begin{document}
+
+% %-------------------------------------------------
+% %         First pages 
+% %-------------------------------------------------
+
+\newgeometry{top=8cm,bottom=.5in,left=2cm,right=2cm}
+\subfile{Attach/1-Cover.tex}
+\restoregeometry
+% \subfile{Attach/2-Contents.tex}
+\subfile{Attach/3-Preface.tex}
+
+% %-------------------------------------------------
+% %         Core of the document 
+% %-------------------------------------------------
+
+\part{微 \ 观 \ 经 \ 济 \ 理 \ 论}
+\subfile{Micro/12-ConsumerTheory.tex}
+
+
+
+% %-------------------------------------------------
+% %         Bibliographie 
+% %-------------------------------------------------
+\nocite{*}
+\printbibliography
+
+\end{document}

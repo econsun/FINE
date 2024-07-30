@@ -1,0 +1,34 @@
+\documentclass[../Main.tex]{subfiles}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{flushleft}
+
+\textbf{\fontfamily{qhv}\selectfont\Huge \BigTitle}
+
+\par\noindent\rule{\textwidth}{4pt}\\
+
+\begin{tikzpicture}
+\shade[bottom color=lightgray,top color=white]
+    (0,0) rectangle (\textwidth, 1.5)
+    node[midway] {\textbf{\large \textit{\LittleTitle}}};
+\end{tikzpicture}
+
+\begin{flushright}
+\Large Zero Edition
+\end{flushright}
+
+\vspace{\fill}
+
+\begin{center}
+    \texttt{This work © 2024 by Paul Sun is licensed under CC BY-NC 4.0} \\
+    \url{https://github.com/econsun/FINE}
+\end{center}
+
+\end{flushleft}
+\end{titlepage}
+
+\restoregeometry
+
+\end{document}
