@@ -9,3 +9,5 @@
 *.thm
 *.toc
 *.synctex
+main.synctex.gz
+main.ptc
